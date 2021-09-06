@@ -15,17 +15,17 @@ void setup()
 
 void loop()
 {
-    if (mcp2515.readMessage(&canMsg1) == MCP2515::ERROR_OK)
+    if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK)
     {
         Serial.print("ID: ");
-        Serial.println(canMsg1.can_id, HEX);
+        Serial.println(canMsg.can_id, HEX);
         Serial.print("DLC: ");
-        Serial.println(canMsg1.can_dlc, HEX);
+        Serial.println(canMsg.can_dlc, HEX);
 
-        int pos = canMsg1.data[0] << 8 | canMsg1.data[1];
-        int vel = canMsg1.data[2] << 8 | canMsg1.data[3];
-        int torqueCurrent = canMsg1.data[4] << 8 | canMsg1.data[5];
-        int temperture = canMsg1.data[6];
+        int pos = canMsg.data[0] << 8 | canMsg.data[1];
+        int vel = canMsg.data[2] << 8 | canMsg.data[3];
+        int torqueCurrent = canMsg.data[4] << 8 | canMsg.data[5];
+        int temperture = canMsg.data[6];
 
         Serial.print("Position: ");
         Serial.println(pos, DEC);
