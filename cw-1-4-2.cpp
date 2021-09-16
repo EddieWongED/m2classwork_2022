@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <SPI.h>
-#include "../lib/arduino-mcp2515/mcp2515.h"
+#include <mcp2515.h>
 
 struct can_frame canMsg200;
 struct can_frame canMsg1FF;

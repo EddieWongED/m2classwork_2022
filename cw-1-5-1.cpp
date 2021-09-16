@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <SPI.h>
-#include "../lib/arduino-mcp2515/mcp2515.h"
+#include <mcp2515.h>
 
 struct can_frame canMsgRead;
 struct can_frame canMsg200;
@@ -57,8 +57,7 @@ void loop()
 
         Serial.print("Velocity: ");
         Serial.print(vel);
-        Serial.println();
-        Serial.print("Current: ");
+        Serial.print("\tCurrent: ");
         Serial.print(current);
         Serial.println();
     }
